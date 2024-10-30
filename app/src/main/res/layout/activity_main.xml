@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- FragmentContainerView para alojar los fragmentos de navegación -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_navigation_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        app:navGraph="@navigation/main"
+        android:name="com.example.ruralapp.ui.MainActivity"
+        app:defaultNavHost="true"/>
+
+    <!-- BottomNavigationView fijo en la parte inferior de la pantalla -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/main_navigation_menu"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
