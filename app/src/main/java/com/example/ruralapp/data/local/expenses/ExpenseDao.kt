@@ -26,9 +26,6 @@ interface ExpenseDao {
     @Query("SELECT * FROM expense WHERE idParticipant = :id")
     suspend fun readExpensesByParticipantId(id:String): List<ExpenseEntity>
 
-    @Query("SELECT * FROM participant INNER JOIN expense ON participant.id = expense.idParticipant")
-    suspend fun readParticipantsWithExpenses():Map<ParticipantEntity,List<ExpenseEntity>>
-
     @Query("SELECT * FROM expense")
     fun observeAll(): Flow<ExpenseEntity>
 

@@ -3,6 +3,8 @@ package com.example.ruralapp.ui
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintSet.GONE
+import androidx.constraintlayout.widget.ConstraintSet.VISIBLE
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
@@ -27,7 +29,17 @@ class MainActivity : AppCompatActivity() {
 
         val navHost = supportFragmentManager.findFragmentById(R.id.main_navigation_area) as NavHostFragment //support para poder castear a Fragment
         val navController = navHost.navController //los navhost tienen asociados el control de navegacion, el que hace las transiciones
+        navController.addOnDestinationChangedListener{ _, _, arguments ->
+
+                val showBottom = arguments?.getBoolean("showBottomNav", false) ?: false
+                if (showBottom)
+                    VISIBLE
+                else
+                    GONE
+        }
 
         binding.bottomNavigation.setupWithNavController(navController)
+
+
     }
 }

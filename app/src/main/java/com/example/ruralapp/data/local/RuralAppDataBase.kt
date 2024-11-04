@@ -9,7 +9,7 @@ import com.example.ruralapp.data.local.participant.ParticipantEntity
 @Database(
     entities = [ParticipantEntity::class,
                 ExpenseEntity::class],
-    version = 1
+    version = 2
 )
 abstract class RuralAppDataBase(): RoomDatabase() {
 
