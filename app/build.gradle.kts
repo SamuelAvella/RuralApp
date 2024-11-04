@@ -42,6 +42,8 @@ android {
 
 dependencies {
 
+    implementation (libs.material)
+    implementation (libs.androidx.coordinatorlayout)
     implementation(libs.hilt.android)
     implementation(libs.androidx.room.common)
     implementation(libs.androidx.room.ktx)

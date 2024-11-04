@@ -32,7 +32,7 @@ fun ParticipantEntity.toExternal():Participant{
 }
 
 fun Map<ParticipantEntity, List<ExpenseEntity>>.toExternal():List<Participant> {
-    this.map { (participantEntity, expenseEntities) ->
+    return this.map { (participantEntity, expenseEntities) ->
         val expenses = expenseEntities.map(ExpenseEntity::toExternal)
         Participant(
             id = UUID.fromString(participantEntity.id),
@@ -42,6 +42,7 @@ fun Map<ParticipantEntity, List<ExpenseEntity>>.toExternal():List<Participant> {
             expenses = expenses
         )
     }
+}
 
 fun Participant.toLocalEntity():ParticipantEntity{
     return ParticipantEntity(
@@ -52,9 +53,20 @@ fun Participant.toLocalEntity():ParticipantEntity{
     )
 }
 
-fun Participant.toUi():ParticipantFormUIState{
-    return ParticipantFormUIState{
+fun Participant.toUi(): ParticipantFormUIState {
+    return ParticipantFormUIState(
         id = this.id,
-        name =
-    }
+        name = this.name,
+        surname1 = this.surname1,
+        surname2 = this.surname2
+    )
+}
+
+fun ParticipantFormUIState.toDomain(): Participant {
+    return Participant(
+        id = this.id,
+        name = this.name,
+        surname1 = this.surname1,
+        surname2 = this.surname2
+    )
 }
