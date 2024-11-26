@@ -37,6 +37,7 @@ class ExpenseCreateFragment : Fragment() {
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED){
+                viewModel.refresh
                 val participants = viewModel.getParticipants().map{
                     participant -> "${participant.name} ${participant.surname1}";
                 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/participants.xml"
+    app:startDestination="@id/participantListFragment">
+
+    <fragment
+        android:id="@+id/participantListFragment"
+        android:name="com.example.ruralapp.ui.participant.ParticipantListFragment"
+        android:label="fragment_participant_list"
+        tools:layout="@layout/fragment_participant_list" >
+        <action
+            android:id="@+id/action_participantListFragment_to_participantCreateFragment"
+            app:destination="@id/participantCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/participantCreateFragment"
+        android:name="com.example.ruralapp.ui.participant.ParticipantCreateFragment"
+        android:label="ParticipantCreateFragment" />
+</navigation>

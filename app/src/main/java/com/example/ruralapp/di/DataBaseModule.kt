@@ -17,7 +17,7 @@ class DataBaseModule {
 
     @Provides
     @Singleton
-    fun provideDataBase(@ApplicationContext context: Context):RuralAppDataBase{
+        fun provideDataBase(@ApplicationContext context: Context):RuralAppDataBase{
         val dataBase = Room.databaseBuilder(context,
                                             RuralAppDataBase::class.java,
                                             "ruralApp-db").build()

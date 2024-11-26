@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/expenses"
+    app:startDestination="@id/expenseFragment">
+
+
+    <fragment
+        android:id="@+id/expenseFragment"
+        android:name="com.example.ruralapp.ui.ExpenseFragment"
+        android:label="fragment_expense"
+        tools:layout="@layout/fragment_expense_list" >
+        <action
+            android:id="@+id/action_expenseFragment_to_expenseCreateFragment"
+            app:destination="@id/expenseCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expenseCreateFragment"
+        android:name="com.example.ruralapp.ui.expense.ExpenseCreateFragment"
+        android:label="ExpenseCreateFragment"
+        tools:layout="@layout/fragment_expense_create">
+        <argument
+            android:name="showBottomNav"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+</navigation>

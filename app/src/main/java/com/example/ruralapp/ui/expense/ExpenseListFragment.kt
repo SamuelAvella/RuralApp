@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ExpenseListFragment : Fragment() {
 
-    private lateinit var binding:FragmentExpenseListBinding
+    private lateinit var binding: FragmentExpenseListBinding
 
 
     override fun onCreateView(

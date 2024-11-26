@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.ruralapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.ruralapp"
@@ -43,6 +43,7 @@ android {
 dependencies {
 
     implementation (libs.material)
+    implementation (libs.androidx.coordinatorlayout)
     implementation (libs.androidx.coordinatorlayout)
     implementation(libs.hilt.android)
     implementation(libs.androidx.room.common)

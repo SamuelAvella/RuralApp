@@ -5,5 +5,7 @@
 
     <include app:graph="@navigation/settings" />
     <include app:graph="@navigation/home" />
-    <include app:graph="@navigation/detail" />
+    <include app:graph="@navigation/expense" />
+    <include app:graph="@navigation/participants" />
 </navigation>
+
